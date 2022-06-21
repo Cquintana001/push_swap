@@ -12,7 +12,18 @@ Number *createNode() {
   return ((Number *) malloc(sizeof(Number)));
 }
  
- 
+int size_Of_List(Number *list)
+{
+	int x;
+
+	x = 1;
+	while(list->next!=NULL)
+	{
+		list = list->next;
+		x++;
+	}
+	return (x);
+} 
 
 
 Number *addNodeToEndOfList(Number *list, int data)
@@ -61,15 +72,24 @@ void Remove_Node_From_Begin_Of_List(Number* *list){
 
 void Remove_Node_From_End_Of_List(Number* *list){
 
-	Number *aux;
-
+	Number *aux, *aux2;
+	int length;
 	if(*list == NULL)
 		return;	
 	aux = *list;
-	while(aux->next != NULL)
-		aux =  aux->next;
 	
-	free(aux);
+	length = size_Of_List(aux);
+	printf("longitud %d\n", length);
+	aux = *list;
+		while(length>2)
+		{
+			aux = aux->next;
+			length--;
+		}
+	aux2 = aux->next;
+	aux->next = NULL;
+	free(aux2);
+	 
 }
 
 int main()
@@ -107,7 +127,7 @@ int main()
 	aux = firstnode;
 	x = 0;
 	printf("=========================\n");
-	while(x<10)
+	while(aux->next != NULL)
 	{	
 		printf("%d\n", aux->data);
 		aux = aux->next;
