@@ -16,12 +16,13 @@ int size_Of_List(Number *list)
 {
 	int x;
 
-	x = 1;
+	x = 0;
 	while(list->next!=NULL)
 	{
 		list = list->next;
 		x++;
 	}
+	 
 	return (x);
 } 
 
@@ -93,30 +94,34 @@ void Remove_Node_From_End_Of_List(Number* *list){
 }
 void swap_first_and_last_nodes(Number* *list)
 {
-	
-	Number *aux, *swap;
-	int length;
-	if(*list == NULL)
-		return; 	
+	Number *aux, *temp;
+	int lenght;
+
 	aux = *list;
-	length = size_Of_List(aux);
-	 
-	aux = *list;
-		while(length>1)
-		{
-			aux = aux->next;
-			length--;
-		}
-	swap = *list;
+	lenght = size_Of_List(aux);
+	while(lenght>2)
+	{
+		aux = aux->next;
+		lenght--;
+	}
+	temp = *list;
 	*list = aux->next;
-	aux->next->next  = swap->next;
-	aux->next = swap;
-	swap->next= NULL;;	 
-
-		
-	 
-
+	(*list)->next = temp->next;
+	aux->next = temp;
+	temp->next = NULL;
 }
+		
+void swap_first_and_second_nodes(Number* *list)
+{
+	Number *aux;	 
+
+	aux = *list;
+	*list = aux->next;
+	aux->next = (*list)->next;
+	(*list)->next = aux; 	 
+}	 
+
+
 
 int main()
 {
@@ -133,26 +138,18 @@ int main()
 	 {
 	 
 	aux->data = x;
-	printf("%d\n", aux->data);
+	 
 	aux->next = createNode();
 	aux = aux->next;
-	aux->next = NULL;
 	x++;
 	}
-	 
-	 
-	swap_first_and_last_nodes(&firstnode);
+	aux->next = NULL;
 	aux = firstnode;
-	x = 0;
-	printf("=========================\n");
-	while(aux->next != NULL)
-	{	
-		printf("%d\n", aux->data);
-		aux = aux->next;
-		x++;
+	swap_first_and_second_nodes(&firstnode);
+	while(firstnode->next !=NULL)
+	{
+		printf("%d\n",firstnode->data );
+		firstnode = firstnode->next;
 	}
-	printf("%d\n", aux->data);
-	free(aux);
-	return 0;
 
 }
