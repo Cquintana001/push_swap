@@ -91,6 +91,32 @@ void Remove_Node_From_End_Of_List(Number* *list){
 	free(aux2);
 	 
 }
+void swap_first_and_last_nodes(Number* *list)
+{
+	
+	Number *aux, *swap;
+	int length;
+	if(*list == NULL)
+		return; 	
+	aux = *list;
+	length = size_Of_List(aux);
+	 
+	aux = *list;
+		while(length>1)
+		{
+			aux = aux->next;
+			length--;
+		}
+	swap = *list;
+	*list = aux->next;
+	aux->next->next  = swap->next;
+	aux->next = swap;
+	swap->next= NULL;;	 
+
+		
+	 
+
+}
 
 int main()
 {
@@ -113,17 +139,9 @@ int main()
 	aux->next = NULL;
 	x++;
 	}
-	Remove_Node_From_Begin_Of_List(&firstnode);
-	aux = firstnode;
-	x = 0;
-	printf("=========================\n");
-	while(x<10)
-	{	
-		printf("%d\n", aux->data);
-		aux = aux->next;
-		x++;
-	}
-	Remove_Node_From_End_Of_List(&firstnode);
+	 
+	 
+	swap_first_and_last_nodes(&firstnode);
 	aux = firstnode;
 	x = 0;
 	printf("=========================\n");
@@ -133,6 +151,7 @@ int main()
 		aux = aux->next;
 		x++;
 	}
+	printf("%d\n", aux->data);
 	free(aux);
 	return 0;
 
