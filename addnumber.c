@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   addnumber.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 15:37:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/06/26 11:25:36 by caquinta         ###   ########.fr       */
+/*   Created: 2022/06/26 10:54:40 by caquinta          #+#    #+#             */
+/*   Updated: 2022/06/26 10:58:50 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-int main(int argc, char **argv)
+Number *addnumber(Number *lista, int nbr)
 {
-	if(argc!=1)
-	{
-		int x;
-		int i;
-		int count;
-		char *string;
-		count = 0;
-		i = 0;
-		x = 1;
-		Number *lista_A;
-		Number *lista_B;
-		lista_A = NULL;
-		lista_B = NULL;
-		string = argv[1];
-		 
-		fill_nbrs(string, &lista_A);
-		 
-		 print_list(lista_A);
-		 
+	Number *newnumber, *aux;
+	newnumber = (Number *)malloc(sizeof(Number));
+	newnumber->data=nbr;
+	 
+	newnumber->next=NULL;
+	if(lista == NULL){
+		lista = newnumber;
 	}
-		 
-	return 0;
+	else{
+
+		aux = lista;
+		while(aux->next!=NULL){
+			aux = aux->next;
+		}
+		aux->next = newnumber;
+	}
+	return lista; 
+
 }

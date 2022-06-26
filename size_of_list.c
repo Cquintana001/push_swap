@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   size_of_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 15:37:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/06/26 11:25:36 by caquinta         ###   ########.fr       */
+/*   Created: 2022/06/26 10:10:57 by caquinta          #+#    #+#             */
+/*   Updated: 2022/06/26 10:11:51 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-int main(int argc, char **argv)
+int size_Of_List(Number *list)
 {
-	if(argc!=1)
+	int x;
+
+	x = 0;
+	while(list->next!=NULL)
 	{
-		int x;
-		int i;
-		int count;
-		char *string;
-		count = 0;
-		i = 0;
-		x = 1;
-		Number *lista_A;
-		Number *lista_B;
-		lista_A = NULL;
-		lista_B = NULL;
-		string = argv[1];
-		 
-		fill_nbrs(string, &lista_A);
-		 
-		 print_list(lista_A);
-		 
+		list = list->next;
+		x++;
 	}
-		 
-	return 0;
+	return (x);
 }
