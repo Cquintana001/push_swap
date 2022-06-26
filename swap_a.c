@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   inverse_rotate.c                                   :+:      :+:    :+:   */
+/*   swap_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/26 10:08:15 by caquinta          #+#    #+#             */
-/*   Updated: 2022/06/26 10:09:57 by caquinta         ###   ########.fr       */
+/*   Created: 2022/06/26 10:06:37 by caquinta          #+#    #+#             */
+/*   Updated: 2022/06/26 15:26:17 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
+ 
 
-void last_node_becomes_the_first(Number* *list)
+void swap_first_and_second_nodes(Number* *list)
 {
-	Number *aux;
-	aux = *list;	 
-	while(aux->next->next != NULL)
-		aux = aux->next;	 
-	aux->next->next =*list;
+	Number *aux;	 
+
+	aux = *list;
 	*list = aux->next;
-	aux->next =NULL;
+	aux->next = (*list)->next;
+	(*list)->next = aux;
+	 
 }
