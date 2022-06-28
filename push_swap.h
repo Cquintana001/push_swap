@@ -5,6 +5,8 @@ typedef struct node
 {
 	int data;
 
+	int chunk = 0;
+
 	struct node *next;
 }Number;
 
