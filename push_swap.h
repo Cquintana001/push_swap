@@ -5,9 +5,14 @@ typedef struct node
 {
 	int data;
 
-	int chunk = 0;
+	int chunk;
+
+	int position;
+
+	int position2;
 
 	struct node *next;
+
 }Number;
 
 void put_top_element_of_list_1_in_top_of_list_2(Number* *list_1, Number* *list_2);
@@ -22,5 +27,6 @@ void	fill_nbrs(char *str, Number* *lista);
 void print_list(Number* list);
 int find_head_position_in_list(Number* list);
 int find_position_in_list(int number, Number *list);
+void fill_chunks(Number* *list, int chunks);
 
 #endif

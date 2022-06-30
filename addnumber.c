@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 10:54:40 by caquinta          #+#    #+#             */
-/*   Updated: 2022/06/26 10:58:50 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/06/30 12:01:24 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ Number *addnumber(Number *lista, int nbr)
 	Number *newnumber, *aux;
 	newnumber = (Number *)malloc(sizeof(Number));
 	newnumber->data=nbr;
-	 
+	newnumber->chunk= -1;
+	newnumber->position = 0;
 	newnumber->next=NULL;
 	if(lista == NULL){
 		lista = newnumber;

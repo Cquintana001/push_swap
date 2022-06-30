@@ -6,56 +6,93 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 09:15:42 by caquinta          #+#    #+#             */
-/*   Updated: 2022/06/28 13:40:07 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/06/30 15:23:56 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
-int check_repeat_in_array(int *array, int number, int arraysize)
-{
-	while(arraysize>=0)
-	{
-		if(number == array[arraysize])
-			return (1);			
-		arraysize--;
-	}
-	return (0);
-}
+#include "push_swap.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-
-int *sorted_list_array(Number* list)
+int movements(int number, Number* list)
 {
+	int movements = 0;
 	int size = size_Of_List(list);
-	int *numberlist = (int*)malloc(sizeof(int)*size);
-	int min;
-	int i;
-	
-	i = 0;
-	Number* aux = list;
-	while(aux)
+	while(list->next != NULL)
 	{
-		if(!check_repeat_in_array(numberlist, aux->data, i) && aux->data<aux->next->data)
-			min = aux->data;
+		if(list->data == number)
+				return movements;
+		else
+			list = list->next;
+			movements++;
+	}
+	if(list->data == number)			 
+		return movements;		 		 
+	return (-1);
+}
+void sorted_list(Number* *list, int i)
+{
+	Number* min;
+	
+	  
+	Number* aux = *list;
+	min = *list;
+	while (min)
+	{
+		if (min->chunk == -1)
+			break;
+		min = min->next;
+	}
+	 
+	while(aux->next != NULL)
+	{
+		if(aux->chunk == -1 && min->data > aux->data)
+			min = aux;
 		aux = aux->next;
 	}
-	i++;
+	if(aux->chunk == -1 && min->data > aux->data)
+			min = aux;
+	min->chunk = i;
+	min->position = movements(min->data, *list);
+	printf("chunk: %d\nvalor: %d\nposition: %d\n", i, min->data, min->position);
+	 
 }
 
 void fill_chunks(Number* *list, int chunks)
-{
-	int numbers = (size_Of_List(list)/chunks);
-	while(numbers)
-	{
-		
-		
-	}
+{	
+	int i;
+	int numbers = (size_Of_List(*list)/chunks);
+	int aux;
 	
-	
-
-	
-	
-
-	
-
-	
+	i = 0;
+	while(i<chunks)
+	{	 
+		aux = numbers;
+		while(aux>0)
+		{
+			sorted_list(list, i);
+			aux--;		
+		}
+		i++;
+	}	
 }
+
+/* int main(int argc, char **argv)
+{
+	if(argc!=1)
+	{
+		 
+		char *string;		 
+		Number *lista_A;		 
+		lista_A = NULL;		 
+		string = argv[1];
+		 
+		fill_nbrs(string, &lista_A);
+		 
+		fill_chunks(&lista_A, 5);
+		print_list(lista_A);
+		 
+		find_position_in_list(lista_A->data, lista_B);
+	}
+	return (0);
+}	 */

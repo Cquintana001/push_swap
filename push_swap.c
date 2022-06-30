@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:37:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/06/27 17:03:03 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/06/30 15:38:51 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,25 @@ int main(int argc, char **argv)
 			swap_first_and_second_nodes(&lista_B);
 			count++;
 		}
-		while(lista_A)
-		{ 	
-			i = find_position_in_list(lista_A->data, lista_B);
-			x = size_Of_List(lista_B);
-		 	 
-			  
-		if(i<=(x/2))
+		fill_chunks(&lista_A, 5);
+		/* while(lista_A->next !=NULL)
+		{
+			printf("chunk: %d\nvalor: %d\nposition: %d\n", lista_A->chunk, lista_A->data, lista_A->position);
+	 		 
+		 lista_A = lista_A->next;
+		} */
+		//printf("posicion1 es: %d y posicion2 es: %d\n", lista_A->position, lista_A->position2);
+		/* while(lista_A)
+		if(lista_B)
+		{
+			while(lista_A)
+			{ 	
+				lista_A->position2 += find_position_in_list(lista_A->data, lista_B);
+				x = size_Of_List(lista_B);
+				lista_A = lista_A->next;
+			}
+		}	   */
+		/* if(i<=(x/2))
 		{
 			while(i>0)
 			{
@@ -74,7 +86,7 @@ int main(int argc, char **argv)
 		}
 		 print_list(lista_B);
 		printf("El número de instrucciones es: %d\n", count);	
-	 
+	  */
 		
 		 
 		 

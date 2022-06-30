@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 14:17:09 by caquinta          #+#    #+#             */
-/*   Updated: 2022/06/27 16:49:29 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/06/30 13:42:37 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ int find_position_in_list(int number, Number *list)
 		aux = aux->next;
 		i--;	
 	}
-	i = find_head_position_in_list(list);
-	 
+	i = find_head_position_in_list(list);	 
 	while(aux)
 	{
 		 
