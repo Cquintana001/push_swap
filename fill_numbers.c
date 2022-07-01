@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:01:27 by caquinta          #+#    #+#             */
-/*   Updated: 2022/06/26 11:22:34 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/01 07:20:38 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static char	*word_dupe(char *str)
 
 void	fill_nbrs(char *str, Number* *lista)
 {
-	int word_index = 0;
+	 
 	int nbr;
 
 	char *string;

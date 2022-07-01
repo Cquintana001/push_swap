@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   remap_positions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/26 10:52:58 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/01 07:09:47 by caquinta         ###   ########.fr       */
+/*   Created: 2022/07/01 09:40:35 by caquinta          #+#    #+#             */
+/*   Updated: 2022/07/01 09:43:25 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_atoi(char *array)
-{
-	int x;
-	int nbr;
-	int sign;
+void remap_positions(Number* *list)
+{	
+	Number *aux;
+	int i;
 
-	sign = 1;
-	nbr =0;
-	x = 0;	 
-	if(array[x] == '-')
-	 {	sign = -1;
-		x++;
-	 }
-	while(array[x]>='0' && array[x]<='9' && array[x] != '\0')
-	{
-		nbr *=10;
-		nbr += array[x]-'0';
-		x++;
-	}
-	return(nbr * sign);
+	i = 0;
+	aux = *list;
+		while(aux)
+		{
+			aux->position =i;
+			aux = aux->next;
+			i++;
+		}
+	
 }

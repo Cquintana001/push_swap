@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 09:15:42 by caquinta          #+#    #+#             */
-/*   Updated: 2022/06/30 15:23:56 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/01 07:48:25 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int movements(int number, Number* list)
 {
 	int movements = 0;
-	int size = size_Of_List(list);
+	 
 	while(list->next != NULL)
 	{
 		if(list->data == number)
@@ -54,7 +54,7 @@ void sorted_list(Number* *list, int i)
 			min = aux;
 	min->chunk = i;
 	min->position = movements(min->data, *list);
-	printf("chunk: %d\nvalor: %d\nposition: %d\n", i, min->data, min->position);
+	//printf("chunk: %d\nvalor: %d\nposition: %d\n", i, min->data, min->position);
 	 
 }
 

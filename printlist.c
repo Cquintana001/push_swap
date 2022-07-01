@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:10:56 by caquinta          #+#    #+#             */
-/*   Updated: 2022/06/30 14:54:30 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/01 11:14:10 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 #include <stdio.h>
 
 void print_list(Number* list)
-{
+{	 
 	while(list)
 	{
-		printf("%d\n", list->position);
+		printf("data: %d\n", list->data);
 		list = list->next;
+		 
 	}
 }

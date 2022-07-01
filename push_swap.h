@@ -28,5 +28,9 @@ void print_list(Number* list);
 int find_head_position_in_list(Number* list);
 int find_position_in_list(int number, Number *list);
 void fill_chunks(Number* *list, int chunks);
+int movements(int number, Number* list);
+int find_min_in_chunk(Number* list, int chunknbr);
+void remap_positions(Number* *list);
+
 
 #endif
