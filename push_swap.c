@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:37:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/01 11:17:53 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/01 12:04:42 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,23 @@ int main(int argc, char **argv)
 				first_node_becomes_the_last(&lista_A);
 				min--;
 			}
-			put_top_element_of_list_1_in_top_of_list_2(&lista_A, &lista_B);
+			if(!lista_B)
+				put_top_element_of_list_1_in_top_of_list_2(&lista_A, &lista_B);
+			else
+			{	min = find_position_in_list(lista_A->data, lista_B);
+				while(min)
+				{
+					first_node_becomes_the_last(&lista_B);
+					min--;
+				}
+			 	put_top_element_of_list_1_in_top_of_list_2(&lista_A, &lista_B);
+			}
 			remap_positions(&lista_A);
-			print_list(lista_B);
 			i++; 
 		}
 		j++; 
 		 }
+			print_list(lista_B);
 			 
 		  
 	}
