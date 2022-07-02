@@ -1,16 +1,35 @@
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
+#include <unistd.h>
+typedef enum e_movetype
+{
+	NOMOVE = 0,
+	PUSH_A,
+	PUSH_B,
+	ROTATE_A,
+	ROTATE_B,
+	RROTATE_A,
+	RROTATE_B,
+	SWAP_A,
+	SWAP_B
+
+}t_movetype;
+
 typedef struct node
 {
 	int data;
 
 	int chunk;
 
-	int position;
+	int n_moves_A;
 
-	int position2;
+	int n_moves_B;
 
+	int direction;
+
+	t_movetype movetypeA;
+	t_movetype movetypeB;
 	struct node *next;
 
 }Number;
@@ -28,9 +47,9 @@ void print_list(Number* list);
 int find_head_position_in_list(Number* list);
 int find_position_in_list(int number, Number *list);
 void fill_chunks(Number* *list, int chunks);
-int movements(int number, Number* list);
-int find_min_in_chunk(Number* list, int chunknbr);
-void remap_positions(Number* *list);
+int movements(Number* node, Number* list);
+Number* find_min_in_chunk(Number* list, int chunknbr);
+void remap_positions(Number* list);
 
 
 #endif

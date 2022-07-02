@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 10:07:32 by caquinta          #+#    #+#             */
-/*   Updated: 2022/06/26 10:47:26 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/02 08:19:55 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void first_node_becomes_the_last(Number* *list)
 	aux->next = *list;
 	*list = (*list)->next;
 	aux->next->next =NULL;
+	//write(1, "ra\n", 3);
 }

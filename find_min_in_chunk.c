@@ -6,30 +6,40 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 09:33:10 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/01 11:13:10 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/02 12:31:15 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int find_min_in_chunk(Number* list, int chunknbr)
+Number* find_min_in_chunk(Number* list, int chunknbr)
 {
 	Number* aux;
-	int min;
-	
-	min = -1;
+	Number* min;
+
+	min = 0;
 	aux = list;
+	
 	while(aux)
 		{	
 			if(aux->chunk == chunknbr)
 			{
-				if(min == -1)
-					min = aux->position;
-				else if(aux->position<min)
-					min=aux->position;			  
-			}
-			aux = aux->next;
+				min = aux;
+				break;
+			}				
+			aux = aux->next;		 
 		}
+	while(aux)
+		{	
+			if(aux->chunk == chunknbr)
+			{
+				if(min->n_moves_A > aux->n_moves_A)
+					min = aux;
+					 		  
+			}
+			aux=aux->next;
+		}
+		 
 
 	return(min);
 }

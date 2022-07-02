@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 09:15:42 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/01 07:48:25 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/02 12:48:40 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,30 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int movements(int number, Number* list)
+int movements(Number* node, Number* list)
 {
 	int movements = 0;
-	 
+	 int size = size_Of_List(list);
 	while(list->next != NULL)
 	{
-		if(list->data == number)
-				return movements;
+		if(list->data == node->data)
+				break;
 		else
 			list = list->next;
 			movements++;
 	}
-	if(list->data == number)			 
-		return movements;		 		 
+	if(list->data == node->data)
+	{	
+		if(movements>size/2)
+		{
+			movements = size -movements;
+			node->movetypeA = RROTATE_A;
+		}
+		else
+			node->movetypeA = ROTATE_A;	 
+		node->n_moves_A = movements;
+		return movements;
+	}		 		 
 	return (-1);
 }
 void sorted_list(Number* *list, int i)
@@ -53,7 +63,7 @@ void sorted_list(Number* *list, int i)
 	if(aux->chunk == -1 && min->data > aux->data)
 			min = aux;
 	min->chunk = i;
-	min->position = movements(min->data, *list);
+	 movements(min , *list);
 	//printf("chunk: %d\nvalor: %d\nposition: %d\n", i, min->data, min->position);
 	 
 }

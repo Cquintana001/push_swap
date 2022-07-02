@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 14:17:09 by caquinta          #+#    #+#             */
-/*   Updated: 2022/06/30 13:42:37 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/02 13:43:09 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int find_head_position_in_list(Number *list)
 	return maxposition;
 }
 
-int find_position_in_list(int number, Number *list)
+int find_position_in_list(Number *node, Number *list)
 {
 	int i;
 	int j;
@@ -54,7 +54,7 @@ int find_position_in_list(int number, Number *list)
 	while(aux)
 	{
 		 
-		if(number>aux->data)
+		if(node->data >aux->data)
 			return i;
 		else
 			aux = aux->next; 
@@ -63,7 +63,7 @@ int find_position_in_list(int number, Number *list)
 	aux = list;
 	while(aux)
 	{
-		if(number>aux->data)
+		if(node->data >aux->data)
 			return j;
 		aux = aux->next;
 		j++;
