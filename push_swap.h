@@ -45,7 +45,7 @@ Number *addnumber(Number *lista, int nbr);
 void	fill_nbrs(char *str, Number* *lista);
 void print_list(Number* list);
 int find_head_position_in_list(Number* list);
-int find_position_in_list(int number, Number *list);
+int find_position_in_list(Number* node, Number *list);
 void fill_chunks(Number* *list, int chunks);
 int movements(Number* node, Number* list);
 Number* find_min_in_chunk(Number* list, int chunknbr);

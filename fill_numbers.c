@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:01:27 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/01 07:20:38 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/03 16:44:03 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@ static char	*word_dupe(char *str)
 	word[len] = '\0';
 
 	while (i < len)
-	{
+	{	if(str[i]<'0' || str[i]>'9')
+		{
+			write(2, "error",5);
+			 exit(0);
+		}
 		word[i] = str[i];
 		++i;
 	}

@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 10:10:57 by caquinta          #+#    #+#             */
-/*   Updated: 2022/06/27 17:00:34 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/03 10:54:19 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 int size_Of_List(Number *list)
 {
+	if(!list)
+		return(0);
 	int x;
-
+	
 	x = 1;
 	while(list->next!=NULL)
 	{
