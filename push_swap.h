@@ -50,6 +50,6 @@ void fill_chunks(Number* *list, int chunks);
 int movements(Number* node, Number* list);
 Number* find_min_in_chunk(Number* list, int chunknbr);
 void remap_positions(Number* list);
-
+int check_if_list_is_sorted(Number* lista_A);
 
 #endif

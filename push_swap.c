@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:37:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/03 16:33:03 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/04 14:39:57 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,33 @@ int main(int argc, char **argv)
 	{		 
 		int i;
 		int j;
+		int numbers;
 		Number* min;
 		Number *lista_A;
 		Number *lista_B;
 		Number* aux;
 		 
-	 	j = 0;
+	 	j = 1;
 		lista_A = NULL;
 		lista_B = NULL;
-		 
-		fill_nbrs(argv[1], &lista_A);		 		 
+		
+		while(argv[j])
+		{
+			fill_nbrs(argv[j], &lista_A);
+			j++;
+		}
+		if(lista_A==NULL) 
+			return(0);
+		check_if_list_is_sorted(lista_A);		 		 
 		fill_chunks(&lista_A, CHUNCK_NBRS );
-		while(j<CHUNCK_NBRS)
+	 
+		j=0;
+		numbers = size_Of_List(lista_A);
+		while(j<numbers)
 		{
 		aux = lista_A;		 
 		i =0;
-		 while(i<100 && lista_A)
+		 while(i<numbers && lista_A)
 		{
 			min = lista_A;
 			  while(min)
