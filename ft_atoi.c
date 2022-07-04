@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 10:52:58 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/04 12:40:59 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/04 15:07:34 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void check_limits(int nbr, char c)
 {
 	int aux1 = nbr*10;
 	int aux2 = (nbr*10)+(c - '0');
-	if(nbr>aux1|| nbr>aux2)
+	if(nbr>aux1|| nbr>aux2 )
 	{
 		write(2, "Error\n",6);
 		exit(0);

@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:01:27 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/04 14:22:00 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/04 15:11:05 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ static char	*word_dupe(char *str)
 	char *word = malloc(sizeof(char) * (len + 1));
 	word[len] = '\0';
 
-		if(str[0] == '-')	
+		if(str[0] == '-' && len>1)	
 		{	word[i] = str[0];
-		i++;
+			i++;
 		}
 	while (i < len)
 	{	
@@ -80,6 +80,5 @@ void	fill_nbrs(char *str, Number* *lista)
 		nbr = ft_atoi(string);
 		check_repeat_number(nbr, *lista);		 
 		*lista = addnumber(*lista, nbr);		 
-	}
-		 
+	}		 
 }
