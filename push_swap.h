@@ -51,5 +51,6 @@ int movements(Number* node, Number* list);
 Number* find_min_in_chunk(Number* list, int chunknbr);
 void remap_positions(Number* list);
 int check_if_list_is_sorted(Number* lista_A);
+void sort_three_numbers(Number* *list_A);
 
 #endif

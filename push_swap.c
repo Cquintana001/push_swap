@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:37:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/04 14:39:57 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/05 12:24:53 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,12 @@ int main(int argc, char **argv)
 	 
 		j=0;
 		numbers = size_Of_List(lista_A);
+		if(numbers == 3)
+		{
+			 sort_three_numbers(&lista_A);
+			 
+			return(0);
+		}
 		while(j<numbers)
 		{
 		aux = lista_A;		 
@@ -66,6 +72,7 @@ int main(int argc, char **argv)
 						min->n_moves_A--;
 						min->n_moves_B--;
 						write(1, "rr\n",3);
+						 
 					}
 			} 
 			if(min->movetypeA == 	RROTATE_A && min->movetypeB == RROTATE_B)
@@ -77,6 +84,7 @@ int main(int argc, char **argv)
 						min->n_moves_A--;
 						min->n_moves_B--;
 						write(1, "rrr\n",4);
+						 
 					}
 			} 
 			if(min->movetypeA == ROTATE_A) 
@@ -157,6 +165,7 @@ int main(int argc, char **argv)
 				write(1, "pa\n",3);
 				size--;
 			}
+			  
 	}	 
 	return 0;
 }
