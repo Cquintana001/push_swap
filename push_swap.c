@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:37:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/05 12:24:53 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/05 15:43:33 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,13 @@ int main(int argc, char **argv)
 		numbers = size_Of_List(lista_A);
 		if(numbers == 3)
 		{
-			 sort_three_numbers(&lista_A);
-			 
+			sort_three_numbers(&lista_A);			 
+			return(0);
+		}
+		if(numbers == 5)
+		{
+			sort_five_numbers(&lista_A, &lista_B);
+			 			 
 			return(0);
 		}
 		while(j<numbers)

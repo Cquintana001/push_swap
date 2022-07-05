@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 10:27:58 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/05 12:37:25 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/05 13:59:39 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void sort_three_numbers(Number* *list_A)
 	first = (*list_A)->data;
 	second = (*list_A)->next->data;
 	third = (*list_A)->next->next->data;
+	if(first<second && second<third )
+		return;
 	if(first>second && second>third)
 	{
 	 	swap_first_and_second_nodes(list_A);

@@ -52,5 +52,6 @@ Number* find_min_in_chunk(Number* list, int chunknbr);
 void remap_positions(Number* list);
 int check_if_list_is_sorted(Number* lista_A);
 void sort_three_numbers(Number* *list_A);
+void sort_five_numbers(Number* *list_A, Number* *list_B);
 
 #endif
