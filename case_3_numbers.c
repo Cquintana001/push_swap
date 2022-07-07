@@ -36,13 +36,13 @@ void sort_three_numbers(Number* *list_A)
 	}
 	else if(first>second && second <third && third<first)
 	{
-		first_node_becomes_the_last(list_A);
+		rotate(list_A);
 		write(1, "ra\n", 3);
 	}
 	else if(first<second && second>third && third > first)
 	{
 		swap_first_and_second_nodes(list_A);
-		first_node_becomes_the_last(list_A);
+		rotate(list_A);
 		write(1, "sa\n", 3);
 		write(1, "ra\n", 3);
 	}

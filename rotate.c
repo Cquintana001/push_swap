@@ -13,7 +13,7 @@
 #include "push_swap.h"
 #include <stdlib.h>
 
-void first_node_becomes_the_last(Number* *list)
+void rotate(Number* *list)
 {
 	Number *aux;
 	aux = *list;	 
@@ -22,5 +22,6 @@ void first_node_becomes_the_last(Number* *list)
 	aux->next = *list;
 	*list = (*list)->next;
 	aux->next->next =NULL;
-	//write(1, "ra\n", 3);
 }
+
+ 

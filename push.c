@@ -13,7 +13,7 @@
 #include "push_swap.h"
  
 
-void put_top_element_of_list_1_in_top_of_list_2(Number* *list_1, Number* *list_2)
+void push(Number* *list_1, Number* *list_2)
 {	
 	if(!(*list_1))
 		return;

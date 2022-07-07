@@ -23,8 +23,9 @@ int movements(Number* node, Number* list)
 		if(list->data == node->data)
 				break;
 		else
-			list = list->next;
+		{	list = list->next;
 			movements++;
+		}
 	}
 	if(list->data == node->data)
 	{	
@@ -64,7 +65,6 @@ void sorted_list(Number* *list, int i)
 			min = aux;
 	min->chunk = i;
 	 movements(min , *list);
-	//printf("chunk: %d\nvalor: %d\nposition: %d\n", i, min->data, min->position);
 	 
 }
 

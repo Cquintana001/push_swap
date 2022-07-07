@@ -33,8 +33,8 @@ void sort_five_numbers(Number* *list_A, Number* *list_B)
 	
 	j = 0;
 	 
-	put_top_element_of_list_1_in_top_of_list_2(list_A, list_B);
-	put_top_element_of_list_1_in_top_of_list_2(list_A, list_B);	 
+	push(list_A, list_B);
+	push(list_A, list_B);	 
 	sort_three_numbers(list_A);
 	 
 	 
@@ -44,10 +44,10 @@ void sort_five_numbers(Number* *list_A, Number* *list_B)
 	 
 		while(i)
 		{	
-			first_node_becomes_the_last(list_A);
+			rotate(list_A);
 			i--;
 		}	
-	  put_top_element_of_list_1_in_top_of_list_2(list_B, list_A);
+	 push(list_B, list_A);
 	 
 		j++;
 	}

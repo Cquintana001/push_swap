@@ -72,8 +72,8 @@ int main(int argc, char **argv)
 			{
 					while(min->n_moves_A && min->n_moves_B )
 					{
-						first_node_becomes_the_last(&lista_A);
-						first_node_becomes_the_last(&lista_B);
+						rotate(&lista_A);
+						rotate(&lista_B);
 						min->n_moves_A--;
 						min->n_moves_B--;
 						write(1, "rr\n",3);
@@ -95,7 +95,7 @@ int main(int argc, char **argv)
 			if(min->movetypeA == ROTATE_A) 
 			{	while(min->n_moves_A )
 				{
-					first_node_becomes_the_last(&lista_A);					 
+					rotate(&lista_A);					 
 					min->n_moves_A--;
 					write(1, "ra\n",3);					  
 				}
@@ -112,7 +112,7 @@ int main(int argc, char **argv)
 			if(min->movetypeB == ROTATE_B) 
 			{	while(min->n_moves_B )
 				{
-					first_node_becomes_the_last(&lista_B);					 
+					rotate(&lista_B);					 
 					min->n_moves_B--;
 					write(1, "rb\n",3);					  
 				}
@@ -126,14 +126,14 @@ int main(int argc, char **argv)
 					write(1, "rrb\n",4);
 				}
 			}
-			 	put_top_element_of_list_1_in_top_of_list_2(&lista_A, &lista_B);
-				 write(1, "pa\n",3);
+			 	push(&lista_A, &lista_B);
+				 write(1, "pb\n",3);
 			  if(size_Of_List(lista_B) == 2)
 			 {
 				if(lista_B->data<lista_B->next->data)
 				{
 					swap_first_and_second_nodes(&lista_B);
-					write(1, "sa\n",3);
+					write(1, "sb\n",3);
 			 	}
 			 }
 			 		 	 
@@ -149,7 +149,7 @@ int main(int argc, char **argv)
 			{				
 				while(i)
 				{
-					first_node_becomes_the_last(&lista_B);
+					rotate(&lista_B);
 					write(1, "rb\n",3);
 					i--;
 				} 		
@@ -166,7 +166,7 @@ int main(int argc, char **argv)
 			}
 			while(size)
 			{
-				put_top_element_of_list_1_in_top_of_list_2(&lista_B, &lista_A);
+				push(&lista_B, &lista_A);
 				write(1, "pa\n",3);
 				size--;
 			}

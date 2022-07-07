@@ -34,9 +34,9 @@ typedef struct node
 
 }Number;
 
-void put_top_element_of_list_1_in_top_of_list_2(Number* *list_1, Number* *list_2);
+void push(Number* *list_1, Number* *list_2);
 void swap_first_and_second_nodes(Number* *list);
-void first_node_becomes_the_last(Number* *list);
+void rotate(Number* *list);
 void reverse_rotate(Number* *list);
 int size_Of_List(Number *list);
 Number *createNode();
