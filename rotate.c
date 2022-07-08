@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 10:07:32 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/02 08:19:55 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/08 17:05:37 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,21 @@ void rotate(Number* *list)
 	*list = (*list)->next;
 	aux->next->next =NULL;
 }
-
+void rotate_a(Number* *list)
+{
+	rotate(list);
+	write(1, "ra\n", 3);	
+}
+void rotate_b(Number* *list)
+{
+	rotate(list);
+	write(1, "rb\n", 3);	
+}
+void rotate_both(Number* *list_1, Number* *list_2)
+{
+	rotate(list_1);
+	rotate(list_2);
+	write(1, "rr\n",3);
+	
+}
  

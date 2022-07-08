@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 10:52:58 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/05 09:35:20 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/08 18:39:08 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,6 @@ void check_limits(int nbr, int c)
 		exit(0);
 	}
 } 
-	
-	
-	 
-
 int ft_atoi(char *array)
 {
 	int x;

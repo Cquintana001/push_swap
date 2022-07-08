@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:37:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/05 15:43:33 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/08 19:52:25 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,55 +28,30 @@ int main(int argc, char **argv)
 		Number *lista_B;
 		Number* aux;
 		 
-	 	j = 1;
+	 	j = 0;
 		lista_A = NULL;
 		lista_B = NULL;
-		
-		while(argv[j])
-		{
-			fill_nbrs(argv[j], &lista_A);
-			j++;
-		}
-		if(lista_A==NULL) 
-			return(0);
-		check_if_list_is_sorted(lista_A);		 		 
+		lista_A = get_list(argv, &lista_A); 	 		 
 		fill_chunks(&lista_A, CHUNCK_NBRS );
-	 
-		j=0;
 		numbers = size_Of_List(lista_A);
 		if(numbers == 3)
-		{
-			sort_three_numbers(&lista_A);			 
-			return(0);
-		}
+			sort_three_numbers(&lista_A);			 	 
 		if(numbers == 5)
-		{
-			sort_five_numbers(&lista_A, &lista_B);
-			 			 
-			return(0);
-		}
+			sort_five_numbers(&lista_A, &lista_B);		 
 		while(j<numbers)
-		{
-		aux = lista_A;		 
+		{	 
 		i =0;
 		 while(i<numbers && lista_A)
 		{
-			min = lista_A;
-			  while(min)
-				{
-					min->n_moves_B = find_position_in_list(min, lista_B);					 
-					min = min->next;
-				} 
-			min = find_min_in_chunk(lista_A, j);
+			min = map_moves_in_B(lista_A, lista_B);;			   
+			min = find_min_in_chunk(lista_A, j);			 
 			if(min->movetypeA == ROTATE_A && min->movetypeB == ROTATE_B)
 			{
 					while(min->n_moves_A && min->n_moves_B )
 					{
-						rotate(&lista_A);
-						rotate(&lista_B);
+						rotate_both(&lista_A, &lista_B);
 						min->n_moves_A--;
 						min->n_moves_B--;
-						write(1, "rr\n",3);
 						 
 					}
 			} 
@@ -84,57 +59,48 @@ int main(int argc, char **argv)
 			{
 					while(min->n_moves_A && min->n_moves_B )
 					{
-						reverse_rotate(&lista_A);
-						reverse_rotate(&lista_B);
+						reverse_rotate_both(&lista_A, &lista_B);
 						min->n_moves_A--;
-						min->n_moves_B--;
-						write(1, "rrr\n",4);
-						 
+						min->n_moves_B--;	 
 					}
 			} 
 			if(min->movetypeA == ROTATE_A) 
 			{	while(min->n_moves_A )
 				{
-					rotate(&lista_A);					 
-					min->n_moves_A--;
-					write(1, "ra\n",3);					  
+					rotate_a(&lista_A);					 
+					min->n_moves_A--;				  
 				}
 			} 
 			else if(min->movetypeA == RROTATE_A)
 			{					 
 				while(min->n_moves_A)
 				{					 
-					reverse_rotate(&lista_A);
+					reverse_rotate_a(&lista_A);
 					min->n_moves_A--;
-					write(1, "rra\n",4);
 				}
 			}
 			if(min->movetypeB == ROTATE_B) 
 			{	while(min->n_moves_B )
 				{
-					rotate(&lista_B);					 
-					min->n_moves_B--;
-					write(1, "rb\n",3);					  
+					rotate_b(&lista_B);					 
+					min->n_moves_B--;				  
 				}
 			} 
 			else if(min->movetypeB == RROTATE_B)
 			{					 
 				while(min->n_moves_B)
 				{					 
-					reverse_rotate(&lista_B);
+					reverse_rotate_b(&lista_B);
 					min->n_moves_B--;
-					write(1, "rrb\n",4);
 				}
 			}
-			 	push(&lista_A, &lista_B);
-				 write(1, "pb\n",3);
+			 	push_b(&lista_A, &lista_B);
+				 
 			  if(size_Of_List(lista_B) == 2)
 			 {
 				if(lista_B->data<lista_B->next->data)
-				{
-					swap_first_and_second_nodes(&lista_B);
-					write(1, "sb\n",3);
-			 	}
+					swap_b(&lista_B);
+ 
 			 }
 			 		 	 
 			remap_positions(lista_A);			 
@@ -142,35 +108,8 @@ int main(int argc, char **argv)
 		}			 		 
 			j++;
 		}
-			int size;
-			 i = find_head_position_in_list(lista_B);
-			 size = size_Of_List(lista_B);
-			 if(i<=(size/2))
-			{				
-				while(i)
-				{
-					rotate(&lista_B);
-					write(1, "rb\n",3);
-					i--;
-				} 		
-			}
-			else if(i>(size/2))
-			{
-				i = size -i;
-				while(i)
-				{
-					reverse_rotate(&lista_B);
-					write(1, "rrb\n",4);
-					i--;
-				} 		
-			}
-			while(size)
-			{
-				push(&lista_B, &lista_A);
-				write(1, "pa\n",3);
-				size--;
-			}
-			  
+			final_set(&lista_A, &lista_B);
+			print_list(lista_A);			  
 	}	 
 	return 0;
 }

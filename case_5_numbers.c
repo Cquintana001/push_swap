@@ -6,12 +6,13 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 12:48:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/05 15:50:48 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/08 19:13:37 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 int position_five_numbers(int nbr, Number* list)
 { int i;
@@ -52,5 +53,5 @@ void sort_five_numbers(Number* *list_A, Number* *list_B)
 		j++;
 	}
 	print_list(*list_A);
-	 
+	 exit(0);
 }

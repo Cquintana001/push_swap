@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 09:15:42 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/02 12:48:40 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/08 18:30:36 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int movements(Number* node, Number* list)
 			movements = size -movements;
 			node->movetypeA = RROTATE_A;
 		}
-		else
+		else  
 			node->movetypeA = ROTATE_A;	 
 		node->n_moves_A = movements;
 		return movements;
