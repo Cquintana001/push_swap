@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:37:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:16:02 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:57:35 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 int	main(int argc, char **argv)
 {
-	int		numbers;
-	Number	*lista_a;
-	Number	*lista_b;
+	int			numbers;
+	t_number	*lista_a;
+	t_number	*lista_b;
 
 	if (argc != 1)
 	{

@@ -1,7 +1,20 @@
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/09 15:22:28 by caquinta          #+#    #+#             */
+/*   Updated: 2022/07/09 15:54:52 by caquinta         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+# include <unistd.h>
+
 typedef enum e_movetype
 {
 	NOMOVE = 0,
@@ -13,60 +26,60 @@ typedef enum e_movetype
 	RROTATE_B,
 	SWAP_A,
 	SWAP_B
-
-}t_movetype;
+}	t_movetype;
 
 typedef struct node
 {
-	int data;
+	int			data;
 
-	int chunk;
+	int			chunk;
 
-	int n_moves_a;
+	int			n_moves_a;
 
-	int n_moves_b;
+	int			n_moves_b;
 
-	int direction;
+	int			direction;
 
-	t_movetype movetype_a;
-	t_movetype movetype_b;
-	struct node *next;
+	t_movetype	movetype_a;
+	t_movetype	movetype_b;
+	struct node	*next;
 
-}Number;
+}				t_number;
 
-void push(Number* *list_1, Number* *list_2);
-void push_a(Number* *list_1, Number* *list_2);
-void push_b(Number* *list_1, Number* *list_2);
-void swap(Number* *list);
-void swap_a(Number* *list);
-void swap_b(Number* *list);
-void rotate(Number* *list);
-void rotate_a(Number* *list);
-void rotate_b(Number* *list);
-void rotate_both(Number* *list_1, Number* *list_2);
-void reverse_rotate(Number* *list);
-void reverse_rotate_a(Number* *list);
-void reverse_rotate_b(Number* *list);
-void reverse_rotate_both(Number* *list_1, Number* *list_2);
-int size_of_list(Number *list);
-Number *createnode();
-int ft_atoi(char *array);
-Number *addnumber(Number *lista, int nbr);
-void	fill_nbrs(char *str, Number* *lista);
-void print_list(Number* list);
-int find_head_position_in_list(Number* list);
-int find_position_in_list(Number* node, Number *list);
-void fill_chunks(Number* *list, int chunks);
-int movements(Number* node, Number* list);
-Number* find_min_in_chunk(Number* list, int chunknbr);
-void remap_positions(Number* list);
-Number* map_moves_in_b(Number *list_1, Number* list_2);
-int check_if_list_is_sorted(Number* lista_a);
-void sort_three_numbers(Number* *list_a);
-void sort_five_numbers(Number* *list_a, Number* *list_b);
-void final_set(Number* *list_1, Number* *list_2);
-void check_min_moves(Number* min, Number* *list_1, Number* *list_2);
-Number* get_list(char **array, Number* *list);
-void do_moves(Number* min,Number* *list_1, Number* *list_2);
-void check_numbers(int numbers, Number* *list_1, Number* *list_2);
+void		push(t_number **list_1, t_number **list_2);
+void		push_a(t_number **list_1, t_number **list_2);
+void		push_b(t_number **list_1, t_number **list_2);
+void		swap(t_number **list);
+void		swap_a(t_number **list);
+void		swap_b(t_number **list);
+void		rotate(t_number **list);
+void		rotate_a(t_number **list);
+void		rotate_b(t_number **list);
+void		rotate_both(t_number **list_1, t_number **list_2);
+void		reverse_rotate(t_number **list);
+void		reverse_rotate_a(t_number **list);
+void		reverse_rotate_b(t_number **list);
+void		reverse_rotate_both(t_number **list_1, t_number **list_2);
+int			size_of_list(t_number *list);
+t_number	*createnode(void);
+int			ft_atoi(char *array);
+t_number	*addnumber(t_number *lista, int nbr);
+void		fill_nbrs(char *str, t_number **lista);
+void		print_list(t_number *list);
+int			find_head_position_in_list(t_number *list);
+int			find_position_in_list(t_number *node, t_number *list);
+void		fill_chunks(t_number **list, int chunks);
+int			movements(t_number *node, t_number *list);
+t_number	*find_min_in_chunk(t_number *list, int chunknbr);
+void		remap_positions(t_number *list);
+t_number	*map_moves_in_b(t_number *list_1, t_number *list_2);
+int			check_if_list_is_sorted(t_number *lista_a);
+void		sort_three_numbers(t_number **list_a);
+void		sort_five_numbers(t_number **list_a, t_number **list_b);
+void		final_set(t_number **list_1, t_number **list_2);
+void		check_min_moves(t_number *min, \
+							t_number **list_1, t_number **list_2);
+t_number	*get_list(char **array, t_number **list);
+void		do_moves(t_number *min, t_number **list_1, t_number **list_2);
+void		check_numbers(int numbers, t_number **list_1, t_number **list_2);
 #endif

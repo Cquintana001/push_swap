@@ -6,13 +6,13 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:30:35 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:17:18 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	final_set(Number **list_1, Number **list_2)
+void	final_set(t_number **list_1, t_number **list_2)
 {
 	int	size;
 	int	i;

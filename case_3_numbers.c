@@ -6,14 +6,14 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 10:27:58 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 12:20:01 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-void	sort_three_numbers(Number **list_A)
+void	sort_three_numbers(t_number **list_A)
 {
 	int	first;
 	int	second;

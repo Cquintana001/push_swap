@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:01:27 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 14:29:18 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <limits.h>
 
-void	check_repeat_number(int nbr, Number *list)
+void	check_repeat_number(int nbr, t_number *list)
 {
 	if (list)
 	{
@@ -68,7 +68,7 @@ static char	*word_dupe(char *str)
 	return (word);
 }
 
-void	fill_nbrs(char *str, Number **lista)
+void	fill_nbrs(char *str, t_number **lista)
 {
 	int		nbr;
 	char	*string;
@@ -88,7 +88,7 @@ void	fill_nbrs(char *str, Number **lista)
 	}
 }
 
-Number	*get_list(char **array, Number **list)
+t_number	*get_list(char **array, t_number **list)
 {
 	int	j;
 

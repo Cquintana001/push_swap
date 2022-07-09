@@ -6,16 +6,16 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 09:33:10 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:11:11 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-Number	*find_min_in_chunk(Number *list, int chunknbr)
+t_number	*find_min_in_chunk(t_number *list, int chunknbr)
 {
-	Number	*aux;
-	Number	*min;
+	t_number	*aux;
+	t_number	*min;
 
 	min = 0;
 	aux = list;

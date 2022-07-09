@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 09:15:42 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:16:24 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	check_movements(Number **node, int movements, int size)
+int	check_movements(t_number **node, int movements, int size)
 {
 	if (movements > size / 2)
 	{
@@ -27,7 +27,7 @@ int	check_movements(Number **node, int movements, int size)
 	return (movements);
 }
 
-int	movements(Number *node, Number *list)
+int	movements(t_number *node, t_number *list)
 {
 	int	movements;
 	int	size;
@@ -52,10 +52,10 @@ int	movements(Number *node, Number *list)
 	return (-1);
 }
 
-void	sorted_list(Number **list, int i)
+void	sorted_list(t_number **list, int i)
 {
-	Number	*min;
-	Number	*aux;
+	t_number	*min;
+	t_number	*aux;
 
 	aux = *list;
 	min = *list;
@@ -77,7 +77,7 @@ void	sorted_list(Number **list, int i)
 	movements(min, *list);
 }
 
-void	fill_chunks(Number **list, int chunks)
+void	fill_chunks(t_number **list, int chunks)
 {
 	int	i;
 	int	numbers;

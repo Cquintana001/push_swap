@@ -6,17 +6,17 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 11:31:04 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:16:52 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:58:12 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_x_numbers(int numbers, Number **list_1, Number **list_2)
+void	sort_x_numbers(int numbers, t_number **list_1, t_number **list_2)
 {
-	Number	*min;
-	int		i;
-	int		j;
+	t_number	*min;
+	int			i;
+	int			j;
 
 	i = 0;
 	j = 0;
@@ -40,7 +40,7 @@ void	sort_x_numbers(int numbers, Number **list_1, Number **list_2)
 	}
 }
 
-void	check_numbers(int numbers, Number **list_1, Number **list_2)
+void	check_numbers(int numbers, t_number **list_1, t_number **list_2)
 {
 	int	i;
 	int	j;

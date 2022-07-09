@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 12:48:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/08 19:13:37 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int position_five_numbers(int nbr, Number* list)
+int position_five_numbers(int nbr, t_number* list)
 { int i;
 	i = 0;
 	while(i<2)
@@ -27,7 +27,7 @@ int position_five_numbers(int nbr, Number* list)
 
 	return(i);
 }
-void sort_five_numbers(Number* *list_A, Number* *list_B)
+void sort_five_numbers(t_number* *list_A, t_number* *list_B)
 {
 	int i;
 	int j;

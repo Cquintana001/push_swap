@@ -6,15 +6,15 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 09:40:35 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:01:29 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	remap_positions(Number *list)
+void	remap_positions(t_number *list)
 {
-	Number	*aux;
+	t_number	*aux;
 
 	aux = list;
 	while (aux)
@@ -24,7 +24,7 @@ void	remap_positions(Number *list)
 	}
 }
 
-Number	*map_moves_in_b(Number *list_1, Number *list_2)
+t_number	*map_moves_in_b(t_number *list_1, t_number *list_2)
 {
 	while (list_1)
 	{

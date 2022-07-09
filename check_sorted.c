@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 14:34:10 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 12:21:59 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	check_if_list_is_sorted(Number *lista_A)
+int	check_if_list_is_sorted(t_number *lista_A)
 {
 	while (lista_A->next != NULL)
 	{

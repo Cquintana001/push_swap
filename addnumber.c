@@ -6,19 +6,19 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 10:54:40 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:13:45 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-Number	*addnumber(Number *lista, int nbr)
+t_number	*addnumber(t_number *lista, int nbr)
 {
-	Number	*newnumber;
-	Number	*aux;
+	t_number	*newnumber;
+	t_number	*aux;
 
-	newnumber = (Number *)malloc(sizeof(Number));
+	newnumber = (t_number *)malloc(sizeof(t_number));
 	newnumber->data = nbr;
 	newnumber->chunk = -1;
 	newnumber->n_moves_a = 0;
