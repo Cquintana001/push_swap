@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 11:31:04 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 12:21:23 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:16:52 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void	sort_x_numbers(int numbers, Number **list_1, Number **list_2)
 	{
 		while (j < numbers && list_1)
 		{
-			min = map_moves_in_B(*list_1, *list_2);
+			min = map_moves_in_b(*list_1, *list_2);
 			min = find_min_in_chunk(*list_1, i);
 			do_moves(min, list_1, list_2);
 			push_b(list_1, list_2);
-			if (size_Of_List(*list_2) == 2)
+			if (size_of_list(*list_2) == 2)
 			{
 				if ((*list_2)->data < (*list_2)->next->data)
 					swap_b(list_2);

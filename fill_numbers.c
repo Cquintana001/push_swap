@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:01:27 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 11:58:10 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 14:29:18 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 #include <stdlib.h>
 #include <limits.h>
 
-void check_repeat_number(int nbr, Number* list)
+void	check_repeat_number(int nbr, Number *list)
 {
-	if(list)
-	{ 
-		while(list)
+	if (list)
+	{
+		while (list)
 		{
-			if(nbr == list->data)
+			if (nbr == list->data)
 			{
-				write(2, "Error\n",6);
+				write(2, "Error\n", 6);
 				exit(0);
 			}
 			list = list->next;
@@ -30,9 +30,11 @@ void check_repeat_number(int nbr, Number* list)
 	}
 }
 
-static int		ft_wordlen(char *str)
+static int	ft_wordlen(char *str)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (str[i] != '\0' && str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
 		++i;
 	return (i);
@@ -40,21 +42,25 @@ static int		ft_wordlen(char *str)
 
 static char	*word_dupe(char *str)
 {
-	int i = 0;
-	int len = ft_wordlen(str);
-	char *word = malloc(sizeof(char) * (len + 1));
-	word[len] = '\0';
+	int		i;
+	int		len;
+	char	*word;
 
-		if(str[0] == '-' && len>1)	
-		{	word[i] = str[0];
-			i++;
-		}
+	len = ft_wordlen(str);
+	word = malloc(sizeof(char) * (len + 1));
+	i = 0;
+	word[len] = '\0';
+	if (str[0] == '-' && len > 1)
+	{
+		word[i] = str[0];
+		i++;
+	}
 	while (i < len)
-	{	
-		if((str[i]<'0' || str[i]>'9'))
+	{
+		if ((str[i] < '0' || str[i] > '9'))
 		{
-			write(2, "Error\n",6);
-			 exit(0);
+			write(2, "Error\n", 6);
+			exit(0);
 		}
 		word[i] = str[i];
 		++i;
@@ -62,40 +68,38 @@ static char	*word_dupe(char *str)
 	return (word);
 }
 
-void	fill_nbrs(char *str, Number* *lista)
+void	fill_nbrs(char *str, Number **lista)
 {
-	 
-	int nbr;
+	int		nbr;
+	char	*string;
 
-	char *string;
 	while (*str == ' ' || *str == '\t' || *str == '\n')
 		++str;
 	while (*str != '\0')
-	{	
-		string = word_dupe(str);		  
+	{
+		string = word_dupe(str);
 		while (*str != '\0' && *str != ' ' && *str != '\t' && *str != '\n')
 			++str;
 		while (*str == ' ' || *str == '\t' || *str == '\n')
 			++str;
 		nbr = ft_atoi(string);
-		check_repeat_number(nbr, *lista);		 
+		check_repeat_number(nbr, *lista);
 		*lista = addnumber(*lista, nbr);
-	}		 
-	 
+	}
 }
 
-Number* get_list(char **array, Number* *list)
+Number	*get_list(char **array, Number **list)
 {
-	int j;
+	int	j;
 
 	j = 1;
-	while(array[j])
+	while (array[j])
 	{
 		fill_nbrs(array[j], list);
 		j++;
 	}
-	if(*list == NULL)
-		return(0);
+	if (*list == NULL)
+		return (0);
 	check_if_list_is_sorted(*list);
-	return(*list);
+	return (*list);
 }

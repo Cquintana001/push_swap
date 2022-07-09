@@ -6,21 +6,21 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 10:10:57 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/03 10:54:19 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:06:43 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-int size_Of_List(Number *list)
+int	size_of_list(Number *list)
 {
-	if(!list)
-		return(0);
-	int x;
-	
+	int	x;
+
+	if (!list)
+		return (0);
 	x = 1;
-	while(list->next!=NULL)
+	while (list->next != NULL)
 	{
 		list = list->next;
 		x++;

@@ -6,38 +6,39 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 10:07:32 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/08 17:05:37 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:08:35 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
 
-void rotate(Number* *list)
+void	rotate(Number **list)
 {
-	Number *aux;
-	aux = *list;	 
-	while(aux->next != NULL)
+	Number	*aux;
+
+	aux = *list;
+	while (aux->next != NULL)
 		aux = aux->next;
 	aux->next = *list;
 	*list = (*list)->next;
-	aux->next->next =NULL;
+	aux->next->next = NULL;
 }
-void rotate_a(Number* *list)
+
+void	rotate_a(Number **list)
 {
 	rotate(list);
-	write(1, "ra\n", 3);	
+	write(1, "ra\n", 3);
 }
-void rotate_b(Number* *list)
+
+void	rotate_b(Number **list)
 {
 	rotate(list);
-	write(1, "rb\n", 3);	
+	write(1, "rb\n", 3);
 }
-void rotate_both(Number* *list_1, Number* *list_2)
+
+void	rotate_both(Number **list_1, Number **list_2)
 {
 	rotate(list_1);
 	rotate(list_2);
-	write(1, "rr\n",3);
-	
+	write(1, "rr\n", 3);
 }
- 

@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 14:17:09 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/03 14:38:59 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:17:37 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int find_position_in_list(Number* node, Number *list)
 
 	j = 0;
 	aux = list;
-	size = size_Of_List(list);
+	size = size_of_list(list);
 	i = find_head_position_in_list(list); 
 	while(i)
 	{
@@ -61,12 +61,12 @@ int find_position_in_list(Number* node, Number *list)
 		if(node->data >aux->data)
 		{	if(i<=(size/2))
 			{				
-				node->movetypeB=ROTATE_B;
+				node->movetype_b=ROTATE_B;
 				return (i);			
 			}
 			else if(i>(size/2))
 			{
-				node->movetypeB=RROTATE_B;
+				node->movetype_b=RROTATE_B;
 				return (size - i);	
 			}
 		}
@@ -83,12 +83,12 @@ int find_position_in_list(Number* node, Number *list)
 		 
 			if(j<=size/2)
 			{				
-				node->movetypeB=ROTATE_B;
+				node->movetype_b=ROTATE_B;
 				return (j);			
 			}
 			else if(j>size/2)
 			{
-				node->movetypeB=RROTATE_B;
+				node->movetype_b=RROTATE_B;
 				return (size - j);	
 			}			 
 		}
@@ -96,15 +96,15 @@ int find_position_in_list(Number* node, Number *list)
 		j++;
 	}
 	 i = find_head_position_in_list(list); 
-	 node->movetypeB=RROTATE_B;
+	 node->movetype_b=RROTATE_B;
 	 if(i<=(size/2))
 			{				
-				node->movetypeB=ROTATE_B;
+				node->movetype_b=ROTATE_B;
 				return (i);			
 			}
 			else if(i>(size/2))
 			{
-				node->movetypeB=RROTATE_B;
+				node->movetype_b=RROTATE_B;
 				return (size - i);	
 			}
 	return (i);

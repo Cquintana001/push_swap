@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:37:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 12:12:43 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 15:16:02 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,23 @@
 
 #define CHUNCK_NBRS 1
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	 
-	if(argc!=1)
-	{		 
- 
-		int numbers;
-		Number *lista_A;
-		Number *lista_B;
+	int		numbers;
+	Number	*lista_a;
+	Number	*lista_b;
 
-		lista_A = NULL;
-		lista_B = NULL;
-		lista_A = get_list(argv, &lista_A); 	 		 
-		fill_chunks(&lista_A, CHUNCK_NBRS );
-		numbers = size_Of_List(lista_A);
-		if(numbers==0)
+	if (argc != 1)
+	{
+		lista_a = NULL;
+		lista_b = NULL;
+		lista_a = get_list(argv, &lista_a);
+		fill_chunks(&lista_a, CHUNCK_NBRS);
+		numbers = size_of_list(lista_a);
+		if (numbers == 0)
 			exit(0);
-		check_numbers(numbers, &lista_A, &lista_B);
-			final_set(&lista_A, &lista_B);	
-	 
-	}	 
-	return 0;
+		check_numbers(numbers, &lista_a, &lista_b);
+		final_set(&lista_a, &lista_b);
+	}
+	return (0);
 }

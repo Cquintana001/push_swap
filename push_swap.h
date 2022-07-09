@@ -22,14 +22,14 @@ typedef struct node
 
 	int chunk;
 
-	int n_moves_A;
+	int n_moves_a;
 
-	int n_moves_B;
+	int n_moves_b;
 
 	int direction;
 
-	t_movetype movetypeA;
-	t_movetype movetypeB;
+	t_movetype movetype_a;
+	t_movetype movetype_b;
 	struct node *next;
 
 }Number;
@@ -48,8 +48,8 @@ void reverse_rotate(Number* *list);
 void reverse_rotate_a(Number* *list);
 void reverse_rotate_b(Number* *list);
 void reverse_rotate_both(Number* *list_1, Number* *list_2);
-int size_Of_List(Number *list);
-Number *createNode();
+int size_of_list(Number *list);
+Number *createnode();
 int ft_atoi(char *array);
 Number *addnumber(Number *lista, int nbr);
 void	fill_nbrs(char *str, Number* *lista);
@@ -60,10 +60,10 @@ void fill_chunks(Number* *list, int chunks);
 int movements(Number* node, Number* list);
 Number* find_min_in_chunk(Number* list, int chunknbr);
 void remap_positions(Number* list);
-Number* map_moves_in_B(Number *list_1, Number* list_2);
-int check_if_list_is_sorted(Number* lista_A);
-void sort_three_numbers(Number* *list_A);
-void sort_five_numbers(Number* *list_A, Number* *list_B);
+Number* map_moves_in_b(Number *list_1, Number* list_2);
+int check_if_list_is_sorted(Number* lista_a);
+void sort_three_numbers(Number* *list_a);
+void sort_five_numbers(Number* *list_a, Number* *list_b);
 void final_set(Number* *list_1, Number* *list_2);
 void check_min_moves(Number* min, Number* *list_1, Number* *list_2);
 Number* get_list(char **array, Number* *list);
