@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 09:15:42 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/08 18:30:36 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 12:24:38 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,23 +86,3 @@ void fill_chunks(Number* *list, int chunks)
 		i++;
 	}	
 }
-
-/* int main(int argc, char **argv)
-{
-	if(argc!=1)
-	{
-		 
-		char *string;		 
-		Number *lista_A;		 
-		lista_A = NULL;		 
-		string = argv[1];
-		 
-		fill_nbrs(string, &lista_A);
-		 
-		fill_chunks(&lista_A, 5);
-		print_list(lista_A);
-		 
-		find_position_in_list(lista_A->data, lista_B);
-	}
-	return (0);
-}	 */

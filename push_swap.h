@@ -68,4 +68,5 @@ void final_set(Number* *list_1, Number* *list_2);
 void check_min_moves(Number* min, Number* *list_1, Number* *list_2);
 Number* get_list(char **array, Number* *list);
 void do_moves(Number* min,Number* *list_1, Number* *list_2);
+void check_numbers(int numbers, Number* *list_1, Number* *list_2);
 #endif

@@ -6,37 +6,37 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 10:27:58 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 10:23:08 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 12:20:01 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-void sort_three_numbers(Number* *list_A)
+void	sort_three_numbers(Number **list_A)
 {
-	int first;
-	int second;
-	int third;
-	
+	int	first;
+	int	second;
+	int	third;
+
 	first = (*list_A)->data;
 	second = (*list_A)->next->data;
 	third = (*list_A)->next->next->data;
-	if(first>second && second>third)
-	{
-	 	swap_a(list_A);	 
-		reverse_rotate_a(list_A);		 
-	}
-	else if(first>second && second <third && third>first)
-		swap_a(list_A);	
-	else if(first>second && second <third && third<first)
-		rotate_a(list_A);	
-	else if(first<second && second>third && third > first)
+	if (first > second && second > third)
 	{
 		swap_a(list_A);
-		rotate_a(list_A);		 
+		reverse_rotate_a(list_A);
+	}
+	else if (first > second && second < third && third > first)
+		swap_a(list_A);
+	else if (first > second && second < third && third < first)
+		rotate_a(list_A);
+	else if (first < second && second > third && third > first)
+	{
+		swap_a(list_A);
+		rotate_a(list_A);
 	}
 	else
 		reverse_rotate_a(list_A);
-	exit(0);	
+	exit(0);
 }

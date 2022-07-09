@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:01:27 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/08 19:06:14 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 11:58:10 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	fill_nbrs(char *str, Number* *lista)
 		check_repeat_number(nbr, *lista);		 
 		*lista = addnumber(*lista, nbr);
 	}		 
-		check_if_list_is_sorted(*lista);
 	 
 }
 
@@ -96,6 +95,7 @@ Number* get_list(char **array, Number* *list)
 		j++;
 	}
 	if(*list == NULL)
-		exit(0);
+		return(0);
+	check_if_list_is_sorted(*list);
 	return(*list);
 }
