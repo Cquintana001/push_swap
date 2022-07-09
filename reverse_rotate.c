@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 10:08:15 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/08 16:46:32 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 08:02:09 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void reverse_rotate(Number* *list)
 	aux->next->next =*list;
 	*list = aux->next;
 	aux->next =NULL;
-	//write(1, "rra\n", 4);
 }
 void reverse_rotate_a(Number* *list)
 {

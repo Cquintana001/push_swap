@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:37:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/08 19:52:25 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 08:50:34 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,12 @@ int main(int argc, char **argv)
 		while(j<numbers)
 		{	 
 		i =0;
-		 while(i<numbers && lista_A)
+		while(i<numbers && lista_A)
 		{
 			min = map_moves_in_B(lista_A, lista_B);;			   
-			min = find_min_in_chunk(lista_A, j);			 
-			if(min->movetypeA == ROTATE_A && min->movetypeB == ROTATE_B)
+			min = find_min_in_chunk(lista_A, j);
+			do_moves(min, &lista_A, &lista_B);			 
+			/* if(min->movetypeA == ROTATE_A && min->movetypeB == ROTATE_B)
 			{
 					while(min->n_moves_A && min->n_moves_B )
 					{
@@ -93,7 +94,7 @@ int main(int argc, char **argv)
 					reverse_rotate_b(&lista_B);
 					min->n_moves_B--;
 				}
-			}
+			} */
 			 	push_b(&lista_A, &lista_B);
 				 
 			  if(size_Of_List(lista_B) == 2)
