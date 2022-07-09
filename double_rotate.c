@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 08:13:09 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 08:51:25 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 09:57:28 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,18 @@ void simple_reverse_rotate_a(Number *min, Number* *list)
 }
 void simple_rotate_b(Number *min, Number* *list)
 {
-	while(min->n_moves_A )
+	while(min->n_moves_B )
 				{
 					rotate_b(list);					 
-					min->n_moves_A--;				  
+					min->n_moves_B--;				  
 				}
 }
 void simple_reverse_rotate_b(Number *min, Number* *list)
 {
-	while(min->n_moves_A )
+	while(min->n_moves_B )
 				{
 					reverse_rotate_b(list);					 
-					min->n_moves_A--;				  
+					min->n_moves_B--;				  
 				}
 }
 void do_moves(Number* min,Number* *list_1, Number* *list_2)

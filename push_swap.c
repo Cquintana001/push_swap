@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:37:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 08:50:34 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 10:08:09 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,65 +45,13 @@ int main(int argc, char **argv)
 		{
 			min = map_moves_in_B(lista_A, lista_B);;			   
 			min = find_min_in_chunk(lista_A, j);
-			do_moves(min, &lista_A, &lista_B);			 
-			/* if(min->movetypeA == ROTATE_A && min->movetypeB == ROTATE_B)
-			{
-					while(min->n_moves_A && min->n_moves_B )
-					{
-						rotate_both(&lista_A, &lista_B);
-						min->n_moves_A--;
-						min->n_moves_B--;
-						 
-					}
-			} 
-			if(min->movetypeA == 	RROTATE_A && min->movetypeB == RROTATE_B)
-			{
-					while(min->n_moves_A && min->n_moves_B )
-					{
-						reverse_rotate_both(&lista_A, &lista_B);
-						min->n_moves_A--;
-						min->n_moves_B--;	 
-					}
-			} 
-			if(min->movetypeA == ROTATE_A) 
-			{	while(min->n_moves_A )
-				{
-					rotate_a(&lista_A);					 
-					min->n_moves_A--;				  
-				}
-			} 
-			else if(min->movetypeA == RROTATE_A)
-			{					 
-				while(min->n_moves_A)
-				{					 
-					reverse_rotate_a(&lista_A);
-					min->n_moves_A--;
-				}
-			}
-			if(min->movetypeB == ROTATE_B) 
-			{	while(min->n_moves_B )
-				{
-					rotate_b(&lista_B);					 
-					min->n_moves_B--;				  
-				}
-			} 
-			else if(min->movetypeB == RROTATE_B)
-			{					 
-				while(min->n_moves_B)
-				{					 
-					reverse_rotate_b(&lista_B);
-					min->n_moves_B--;
-				}
-			} */
-			 	push_b(&lista_A, &lista_B);
-				 
+			do_moves(min, &lista_A, &lista_B);		 
+			 	push_b(&lista_A, &lista_B);				 
 			  if(size_Of_List(lista_B) == 2)
 			 {
 				if(lista_B->data<lista_B->next->data)
 					swap_b(&lista_B);
- 
-			 }
-			 		 	 
+			 }			 		 	 
 			remap_positions(lista_A);			 
 			i++; 		 	 
 		}			 		 
