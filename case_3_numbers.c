@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 10:27:58 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/10 11:03:51 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,4 @@ void	sort_three_numbers(t_number **list_A)
 	}
 	else
 		reverse_rotate_a(list_A);
-	exit(0);
 }

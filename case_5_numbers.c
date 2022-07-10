@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 12:48:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/09 18:47:49 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int position_five_numbers(int nbr, t_number* list)
 { int i;
 	i = 0;
-	while(i<2)
+	while(list)
 	{
 		if(nbr  < list->data)
 			break;
@@ -53,5 +53,5 @@ void sort_five_numbers(t_number* *list_A, t_number* *list_B)
 		j++;
 	}
 	print_list(*list_A);
-	 exit(0);
+	 
 }

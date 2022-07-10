@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 09:33:10 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/10 15:41:04 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ t_number	*find_min_in_chunk(t_number *list, int chunknbr)
 		}
 		aux = aux->next;
 	}
+	//aux = list;
 	while (aux)
 	{
 		if (aux->chunk == chunknbr)
 		{
-			if ((min->n_moves_a + min->n_moves_b) > \
+			if ((min->n_moves_a + min->n_moves_b) >= \
 				(aux->n_moves_a + aux->n_moves_b))
 				min = aux;
 		}

@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:37:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:57:35 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/10 15:39:49 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ int	main(int argc, char **argv)
 		lista_a = get_list(argv, &lista_a);
 		fill_chunks(&lista_a, CHUNCK_NBRS);
 		numbers = size_of_list(lista_a);
+		
 		if (numbers == 0)
 			exit(0);
 		check_numbers(numbers, &lista_a, &lista_b);
 		final_set(&lista_a, &lista_b);
+		 //print_list(lista_a);
 	}
 	return (0);
 }

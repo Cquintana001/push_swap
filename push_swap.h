@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:22:28 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:54:52 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/10 14:29:38 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,11 @@ void		check_min_moves(t_number *min, \
 t_number	*get_list(char **array, t_number **list);
 void		do_moves(t_number *min, t_number **list_1, t_number **list_2);
 void		check_numbers(int numbers, t_number **list_1, t_number **list_2);
+int			find_position_in_list_2(t_number *node, t_number *list);
+void	both_reverse_move(t_number *min, t_number **list_1, t_number **list_2);
+void	both_rotate_move(t_number *min, t_number **list_1, t_number **list_2);
+void	simple_rotate_a(t_number *min, t_number **list);
+void	simple_reverse_rotate_a(t_number *min, t_number **list);
+void	simple_rotate_b(t_number *min, t_number **list);
+
 #endif
