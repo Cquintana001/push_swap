@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:01:27 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/12 15:59:20 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	fill_nbrs(char *str, t_number **lista)
 		while (*str == ' ' || *str == '\t' || *str == '\n')
 			++str;
 		nbr = ft_atoi(string);
+		free(string);
 		check_repeat_number(nbr, *lista);
 		*lista = addnumber(*lista, nbr);
 	}

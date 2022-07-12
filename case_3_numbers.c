@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 10:27:58 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/10 11:03:51 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/12 10:46:56 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ void	sort_three_numbers(t_number **list_A)
 	int	first;
 	int	second;
 	int	third;
-
 	first = (*list_A)->data;
 	second = (*list_A)->next->data;
 	third = (*list_A)->next->next->data;
+	if(first < second && second < third )	
+		return;
 	if (first > second && second > third)
 	{
 		swap_a(list_A);
