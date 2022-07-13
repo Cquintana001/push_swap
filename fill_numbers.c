@@ -6,13 +6,14 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:01:27 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/12 15:59:20 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/13 12:14:30 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 #include <limits.h>
+#include "./Libft/libft.h"
 
 void	check_repeat_number(int nbr, t_number *list)
 {

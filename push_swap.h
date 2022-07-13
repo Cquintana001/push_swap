@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:22:28 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/12 08:12:00 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/13 10:58:15 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ typedef struct node
 
 	int			n_moves_b;
 
-	int			direction;
 
 	t_movetype	movetype_a;
 	t_movetype	movetype_b;
@@ -62,7 +61,7 @@ void		reverse_rotate_b(t_number **list);
 void		reverse_rotate_both(t_number **list_1, t_number **list_2);
 int			size_of_list(t_number *list);
 t_number	*createnode(void);
-int			ft_atoi(char *array);
+//int			ft_atoi(char *array);
 t_number	*addnumber(t_number *lista, int nbr);
 void		fill_nbrs(char *str, t_number **lista);
 void		print_list(t_number *list);

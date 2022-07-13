@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 12:48:51 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/12 15:53:14 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/13 12:27:31 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,7 @@ void rotate_list_b(t_number* *list_a, t_number* *list_b)
 }
 void sort_five_numbers(t_number* *list_A, t_number* *list_B)
 {
-	int i;
 	int j;
-	int size;
 	j = 0;
 	while(j<2)
 	{	 

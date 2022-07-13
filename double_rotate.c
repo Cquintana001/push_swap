@@ -6,11 +6,12 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 08:13:09 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/10 15:29:21 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/13 10:43:49 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void	simple_reverse_rotate_b(t_number *min, t_number **list)
 {
@@ -22,7 +23,7 @@ void	simple_reverse_rotate_b(t_number *min, t_number **list)
 }
 
 void	do_moves(t_number *min, t_number **list_1, t_number **list_2)
-{
+{	
 	if (min->movetype_a == ROTATE_A && min->movetype_b == ROTATE_B)
 		both_rotate_move(min, list_1, list_2);
 	if (min->movetype_a == RROTATE_A && min->movetype_b == RROTATE_B)

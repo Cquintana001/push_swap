@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 10:54:40 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/09 15:47:07 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/13 13:15:49 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@ t_number	*addnumber(t_number *lista, int nbr)
 {
 	t_number	*newnumber;
 	t_number	*aux;
-
+ 
 	newnumber = (t_number *)malloc(sizeof(t_number));
 	newnumber->data = nbr;
 	newnumber->chunk = -1;
 	newnumber->n_moves_a = 0;
+	newnumber->n_moves_a = 0;
+	newnumber->movetype_a = NOMOVE;
+	newnumber->movetype_b = NOMOVE;
 	newnumber->next = NULL;
 	if (lista == NULL)
-	{
 		lista = newnumber;
-	}
 	else
 	{
 		aux = lista;

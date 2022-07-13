@@ -6,37 +6,37 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 10:27:58 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/12 10:46:56 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/13 10:22:49 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-void	sort_three_numbers(t_number **list_A)
+void	sort_three_numbers(t_number **list_a)
 {
 	int	first;
 	int	second;
 	int	third;
-	first = (*list_A)->data;
-	second = (*list_A)->next->data;
-	third = (*list_A)->next->next->data;
+	first = (*list_a)->data;
+	second = (*list_a)->next->data;
+	third = (*list_a)->next->next->data;
 	if(first < second && second < third )	
 		return;
 	if (first > second && second > third)
 	{
-		swap_a(list_A);
-		reverse_rotate_a(list_A);
+		swap_a(list_a);
+		reverse_rotate_a(list_a);
 	}
 	else if (first > second && second < third && third > first)
-		swap_a(list_A);
+		swap_a(list_a);
 	else if (first > second && second < third && third < first)
-		rotate_a(list_A);
+		rotate_a(list_a);
 	else if (first < second && second > third && third > first)
 	{
-		swap_a(list_A);
-		rotate_a(list_A);
+		swap_a(list_a);
+		rotate_a(list_a);
 	}
 	else
-		reverse_rotate_a(list_A);
+		reverse_rotate_a(list_a);
 }
