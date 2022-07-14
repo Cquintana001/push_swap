@@ -16,7 +16,6 @@ SRC			=	push_swap.c					\
 					ft_atoi_push.c		\
 					node.c		\
 					printlist.c			\
-					push_swap.c			\
 					push.c			\
 					remap_positions.c \
 					reverse_rotate.c \
@@ -40,21 +39,14 @@ MAKE = make
 all: $(NAME)
  
 
-#%.o : %.c 
-#	$(CC) $(CFLAGS) -c  $< -o $@
-
-
+%.o : %.c 
+	$(CC) $(CFLAGS) -c  $< -o $@
  
-$(NAME):
+
+$(NAME): $(OBJ) $(INCLUDES)
 	$(MAKE) -C	Libft
 	mv Libft/libft.a .
-	$(CC) $(CFLAGS) $(SRC) libft.a -o $@
-
-#$(NAME): $(OBJ) $(INCLUDES)
-#	$(MAKE) -C	Libft
-#	mv Libft/libft.a .
-#	mv libft.a $(NAME)
-#	$(CC) $(CFLAGS) $(OBJ) libft.a -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) libft.a -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)  
