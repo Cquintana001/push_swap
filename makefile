@@ -1,62 +1,68 @@
 # ========== VARIABLES ==========
-NAME			=	push_swap.a
-DIR_OBJS 		=	objs/
-CC				=	clang
-CFLAGS			=	-Wall -Werror -Wextra -g
+NAME			=	push_swap
 
-SRCS			=	push_swap.c					\
-					srcs/case_3_numbers.c		\
-					srcs/case_5_numbers.c	\
-					srcs/check_numbers.c		\
-					srcs/check_sorted.c				\
-					srcs/double_rotate_src.c				\
-					srcs/double_rotate.c			\
-					srcs/fill_chunks.c	\
-					srcs/fill_numbers.c		\
-					srcs/final_set.c		\
-					srcs/find_min_in_chunk.c		\
-					srcs/find_position.c		\
-					srcs/ft_atoi.c		\
-					srcs/node.c		\
-					srcs/printlist.c			\
-					srcs/push_swap.c			\
-					srcs/push.c			\
-					srcs/remap_positions.c \
-					srcs/reverse_rotate \
-					srcs/rotate.c \
-					srcs/size_of_list.c \
-					srcss/swap.c \
+SRC			=	push_swap.c					\
+					case_3_numbers.c		\
+					case_5_numbers.c	\
+					check_numbers.c		\
+					check_sorted.c				\
+					double_rotate_src.c				\
+					double_rotate.c			\
+					fill_chunks.c	\
+					fill_numbers.c		\
+					final_set.c		\
+					find_min_in_chunk.c		\
+					find_position.c		\
+					ft_atoi_push.c		\
+					node.c		\
+					printlist.c			\
+					push_swap.c			\
+					push.c			\
+					remap_positions.c \
+					reverse_rotate.c \
+					rotate.c \
+					size_of_list.c \
+					swap.c \
+					addnumber.c \
 
-OBJS			=	$(SRCS:.c=.o)
-OBJS_PREFIXED	=	$(addprefix $(DIR_OBJS), $(OBJS))
+OBJ = $(SRC:.c=.o)
+
+INCLUDES = push_swap.h
+
+CC = gcc 
+CFLAGS = -Wall -Wextra -Werror
+AR = ar rc
+RM = rm -f
+MAKE = make
 
  
 
-# ========== RULES ==========
-
-$(DIR_OBJS)%.o : %.c push_swap.h
-	@mkdir -p $(DIR_OBJS)/srcs/libft
-	@echo "Compiling with $(CC) $(CFLAGS):\t $<"
-	@$(CC) $(CFLAGS) -c $< -o $@
-
-$(NAME) : $(OBJS_PREFIXED)
-	@ar csr $(NAME) $(OBJS_PREFIXED)
-	@echo "${GREEN}Mandatory part compiled!${RESET}"
-
-# ========== FUNCTIONS ==========
-
 all: $(NAME)
+ 
+
+#%.o : %.c 
+#	$(CC) $(CFLAGS) -c  $< -o $@
+
+
+ 
+$(NAME):
+	$(MAKE) -C	Libft
+	mv Libft/libft.a .
+	$(CC) $(CFLAGS) $(SRC) libft.a -o $@
+
+#$(NAME): $(OBJ) $(INCLUDES)
+#	$(MAKE) -C	Libft
+#	mv Libft/libft.a .
+#	mv libft.a $(NAME)
+#	$(CC) $(CFLAGS) $(OBJ) libft.a -o $(NAME)
 
 clean:
-	@rm -rf $(OBJS) $(DIR_OBJS)
-	@echo "${GREEN}Cleaned!${RESET}"
+	$(RM) $(OBJ)  
 
 fclean: clean
-	@rm -f $(NAME)
+	$(RM) $(NAME) libft.a Libft/*.o
+
 
 re: fclean all
 
-out: all
-	gcc -g $(CFLAGS) push_swap.a -o push_swap
-
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 11:31:04 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/10 15:22:10 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/13 13:50:09 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	check_numbers(int numbers, t_number **list_1, t_number **list_2)
 	if (numbers == 5)
 	{
 		sort_five_numbers(list_1, list_2);
+		
 		exit(0);
 	}
 	else
