@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:22:28 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/15 07:58:33 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/15 09:02:14 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ typedef struct node
 	struct node	*next;
 
 }				t_number;
-
+void		erase_free_data(char *word, t_number **lista);
 void		erase_data(t_number	**list);
 void		push(t_number **list_1, t_number **list_2);
 void		push_a(t_number **list_1, t_number **list_2);

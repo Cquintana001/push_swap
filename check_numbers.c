@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 11:31:04 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/15 07:52:53 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/15 09:10:34 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,17 @@ void	sort_x_numbers(int numbers, t_number **list_1, t_number **list_2)
 
 void	check_numbers(int numbers, t_number **list_1, t_number **list_2)
 {
-	int	i;
-	int	j;
-
-	j = 0;
-	i = 0;
 	if (numbers == 3)
 	{
 		sort_three_numbers(list_1);
+		erase_data(list_1);
 		exit(0);
 	}
 	if (numbers == 5)
 	{
 		sort_five_numbers(list_1, list_2);
+		erase_data(list_1);
+		erase_data(list_2);
 		exit(0);
 	}
 	else

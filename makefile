@@ -23,13 +23,14 @@ SRC			=	push_swap.c					\
 					size_of_list.c \
 					swap.c \
 					addnumber.c \
+					erase_free_data.c \
 
 OBJ = $(SRC:.c=.o)
 
 INCLUDES = push_swap.h
 
 CC = gcc 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 AR = ar rc
 RM = rm -f
 MAKE = make

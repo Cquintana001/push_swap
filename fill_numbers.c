@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:01:27 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/14 17:22:28 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/15 09:03:01 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	ft_wordlen(char *str)
 	return (i);
 }
 
-static char	*word_dupe(char *str)
+static char	*word_dupe(char *str, t_number **lista)
 {
 	int		i;
 	int		len;
@@ -59,10 +59,7 @@ static char	*word_dupe(char *str)
 	while (i < len)
 	{
 		if ((str[i] < '0' || str[i] > '9'))
-		{
-			write(2, "Error\n", 6);
-			exit(0);
-		}
+			erase_free_data(word, lista);
 		word[i] = str[i];
 		++i;
 	}
@@ -78,7 +75,7 @@ void	fill_nbrs(char *str, t_number **lista)
 		++str;
 	while (*str != '\0')
 	{
-		string = word_dupe(str);
+		string = word_dupe(str, lista);
 		while (*str != '\0' && *str != ' ' && *str != '\t' && *str != '\n')
 			++str;
 		while (*str == ' ' || *str == '\t' || *str == '\n')
