@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:22:28 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/14 17:22:56 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/15 07:58:33 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <unistd.h>
-#include "./Libft/libft.h"
+# include "./Libft/libft.h"
 
 typedef enum e_movetype
 {
@@ -44,7 +44,7 @@ typedef struct node
 
 }				t_number;
 
-void		erase_data(t_number* *list);
+void		erase_data(t_number	**list);
 void		push(t_number **list_1, t_number **list_2);
 void		push_a(t_number **list_1, t_number **list_2);
 void		push_b(t_number **list_1, t_number **list_2);
