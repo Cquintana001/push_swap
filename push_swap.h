@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 15:22:28 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/15 09:02:14 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/15 12:45:40 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void		reverse_rotate_b(t_number **list);
 void		reverse_rotate_both(t_number **list_1, t_number **list_2);
 int			size_of_list(t_number *list);
 t_number	*createnode(void);
-int			ft_atoi_push(char *array);
+int			ft_atoi_push(char *array, t_number **list);
 t_number	*addnumber(t_number *lista, int nbr);
 void		fill_nbrs(char *str, t_number **lista);
 void		print_list(t_number *list);

@@ -6,7 +6,7 @@
 /*   By: caquinta <caquinta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:01:27 by caquinta          #+#    #+#             */
-/*   Updated: 2022/07/15 09:03:01 by caquinta         ###   ########.fr       */
+/*   Updated: 2022/07/15 12:45:17 by caquinta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	check_repeat_number(int nbr, t_number *list)
 		{
 			if (nbr == list->data)
 			{
+				erase_data(&list);
 				write(2, "Error\n", 6);
 				exit(0);
 			}
@@ -80,7 +81,7 @@ void	fill_nbrs(char *str, t_number **lista)
 			++str;
 		while (*str == ' ' || *str == '\t' || *str == '\n')
 			++str;
-		nbr = ft_atoi_push(string);
+		nbr = ft_atoi_push(string, lista);
 		free(string);
 		check_repeat_number(nbr, *lista);
 		*lista = addnumber(*lista, nbr);
